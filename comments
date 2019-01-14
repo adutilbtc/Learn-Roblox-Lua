@@ -1,4 +1,4 @@
-ocal bot = game.Workspace:FindFirstChild("bttb",true)
+local bot = game.Workspace:FindFirstChild("bttb",true)
 
 --looks for part labled "spin"
 Services=bot.VehicleSeat.Services
