@@ -1,0 +1,47 @@
+local bot = game.Workspace:FindFirstChild("SR",true)
+local speed = -0.2
+local speed2 = 0.2
+Services=bot.VehicleSeat.Services
+Spin=bot.Spin
+LeftMotor = bot.Axe.LeftMotor
+RightMotor = bot.Axe.RightMotor
+
+function input(key) -- Top speed
+	if key == "r" then -- Turns spinner on
+		Services.SpinUp:FireServer()
+	elseif key == "f" then -- Turns spinner off
+		Services.SpinDown:FireServer()
+		end
+	end
+	
+function down(key)
+	if key == "q" then
+		Services.ArmDown:FireServer()
+	elseif key == "e" then
+		Services.ArmUp:FireServer()
+		end	
+	end
+
+function onButton1Down(mouse)  
+	local w = game.Workspace:getChildren() 
+	for i = 1, #w do 
+		if (w[i].className == "Camera") or (w[i].className == "Cam" .. game.Players.LocalPlayer.Character.Name) then 
+			if w[i].CameraSubject == game.Players.LocalPlayer.Character.Humanoid then                                            
+				w[i].CameraSubject = bot:findFirstChild("Camera")
+				w[i].CameraType = "Track"
+				w[i].Name = "Cam" .. game.Players.LocalPlayer.Character.Name 
+			else w[i].CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+				w[i].CameraType = "Custom"
+			end 
+		end 
+	end 
+end 
+
+function onSelected(mouse) 
+	mouse.Button1Down:connect(onButton1Down) 
+	mouse.KeyDown:connect(input)
+	mouse.KeyDown:connect(down)
+end 
+
+script.Parent.Equipped:connect(onSelected) 
+
