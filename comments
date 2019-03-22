@@ -1,12 +1,11 @@
 local bot = game.Workspace:FindFirstChild("bttb",true)
 
---looks for part labled "spin"
+
 Services=bot.VehicleSeat.Services
 
---make function to recieve key input
-    --give key input to switch spinner on
+
         Services.SpinUp:FireServer()
-    --give key input to spin down
+   
         Services.SpinDown:FireServer()
     end
 end
