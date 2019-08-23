@@ -1,4 +1,4 @@
-local bot = game.Workspace:FindFirstChild("SR",true)
+local bot = game.Workspace:FindFirstChild("ys2",true)
 local speed = -0.2
 local speed2 = 0.2
 Services=bot.VehicleSeat.Services
@@ -11,6 +11,8 @@ function input(key) -- Top speed
 		Services.SpinUp:FireServer()
 	elseif key == "f" then -- Turns spinner off
 		Services.SpinDown:FireServer()
+	elseif key=="t" then--automatic mode
+		Services.AutoDrive:FireServer()
 		end
 	end
 	
