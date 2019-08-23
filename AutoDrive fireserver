@@ -1,0 +1,13 @@
+local bot-game.Workspace:FindFirstChild("ys2",true)
+
+
+
+
+script.Parent.OnServerEvent:connect(function()
+if key=="t" then
+local bot=workspace:FindFirstChild ("SmartZone",true)--takes over the driving from a player, still a WIP
+
+
+
+
+)
